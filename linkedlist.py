@@ -14,7 +14,7 @@ class LinkedList:
 
     def insertAtEnd(self, new_data):
         new_node = Node(new_data)
-        
+
         if self.head is None:
             self.head = new_node
             return
@@ -25,10 +25,20 @@ class LinkedList:
             last = last.next
 
         last.next = new_node
+
+    def listSize(self):
+        size = 0
+        last = self.head
+        while last.next is not None:
+            last = last.next
+            size += 1
+        return size
         
 
-    def insertAtIndex(self):
-        pass
+    def insertAtIndex(self, new_data, index):
+        new_node = Node(new_data)
+        
+
 
     def deleteFromBeginning(self):
         pass
