@@ -8,6 +8,3 @@ class BinaryTree:
     def __init__(self):
         self.root = None        
 
-print("change")
-
-print("hlaaoladodklpaküaoğkfa")
