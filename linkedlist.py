@@ -64,7 +64,18 @@ class LinkedList:
 
 
     def deleteFromEnd(self):
-        pass
+        if self.head is None:
+            print("list is already empty")
+
+        elif self.head.next is None:
+            self.head = None
+
+        else:
+            last = self.head
+            while last.next is not None:
+                prev = last
+                last = last.next
+            prev.next = None
 
     def deleteByValue(self):
         pass
@@ -95,15 +106,13 @@ class LinkedList:
 
 llist = LinkedList()
 
-# llist.insertAtBeginning(10)
-# llist.insertAtBeginning(20)
-# llist.insertAtBeginning(30)
-# llist.insertAtBeginning(40)
-# llist.insertAtBeginning(50)
-# llist.insertAtEnd(60)
-# llist.insertAtEnd(31)
-# llist.insertAtIndex(15,0)
-llist.deleteFromBeginning()
-llist.deleteFromBeginning()
+llist.insertAtBeginning(10)
+llist.insertAtBeginning(20)
+llist.insertAtBeginning(30)
+llist.insertAtBeginning(40)
+llist.insertAtBeginning(50)
+llist.deleteFromEnd()
+
+
 
 llist.display()
