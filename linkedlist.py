@@ -114,9 +114,6 @@ class LinkedList:
             prev.next=last.next
             last = None
         
-    def traverse(self):
-        pass
-
     def display(self):
         if self.head == None:
             print("list is empty")
@@ -126,14 +123,14 @@ class LinkedList:
             print(last.data, end= " ")
             last = last.next
         
-
     def search(self):
         pass
 
-    def IndexOfValue(self):
+    def IndexOfValue(self,value):
         pass
 
-    
+    def traverse(self):
+        pass
 
 llist = LinkedList()
 
