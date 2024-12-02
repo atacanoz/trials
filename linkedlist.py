@@ -26,8 +26,8 @@ class LinkedList:
 
         last.next = new_node
 
-    def listSize(self):
-        size = 0
+    def Size(self):
+        size = 0    
         last = self.head
         while last.next is not None:
             last = last.next
@@ -36,8 +36,20 @@ class LinkedList:
         
 
     def insertAtIndex(self, new_data, index):
+        if index > self.Size():
+            print("index out of range")
+            return
         new_node = Node(new_data)
-        
+        last = self.head
+        beforelast = last
+        count = 0
+        while count != index:
+            beforelast = last
+            last = last.next
+            count += 1
+
+        new_node.next = last
+        beforelast.next = new_node            
 
 
     def deleteFromBeginning(self):
