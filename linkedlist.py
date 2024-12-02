@@ -26,9 +26,7 @@ class LinkedList:
 
         last.next = new_node
 
-    def Size(self):
-        if self.head is None:
-            return 0
+    def Size(self): 
         size = 0
         last = self.head
         while last.next is not None:
@@ -36,7 +34,7 @@ class LinkedList:
             size += 1
         return size
         
-    def insertAtIndex(self, new_data, index):
+    def insertAtIndex(self, new_data, index): # could be better
         new_node = Node(new_data)
         last = self.head
         beforelast = last
@@ -77,7 +75,7 @@ class LinkedList:
                 last = last.next
             prev.next = None
 
-    def deleteByValue(self,value):
+    def deleteByValue(self,value): # could be better without prev
         if self.head == None:
             print("empty")
 
