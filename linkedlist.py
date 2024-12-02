@@ -83,3 +83,12 @@ class LinkedList:
 
     
 
+llist = LinkedList()
+
+llist.insertAtBeginning(10)
+llist.insertAtBeginning(20)
+llist.insertAtBeginning(30)
+llist.insertAtBeginning(40)
+llist.insertAtBeginning(50)
+
+llist.display()
