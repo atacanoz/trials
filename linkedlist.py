@@ -9,14 +9,23 @@ class LinkedList:
 
     def insertAtBeginning(self, new_data):
         new_node = Node(new_data)
-        new_node.next = self.head
-        self.head = new_node      
+        new_node.next = self.head 
+        self.head = new_node  # head points to the new node 
 
-    def insertAtEnd(self):
+    def insertAtEnd(self, new_data):
+        new_node = Node(new_data)
         
+        if self.head is None:
+            self.head = new_node
+            return
+        
+        last = self.head
+        
+        while last.next is not None:
+            last = last.next
 
-
-        pass
+        last.next = new_node
+        
 
     def insertAtIndex(self):
         pass
