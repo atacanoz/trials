@@ -36,13 +36,18 @@ class LinkedList:
         
 
     def insertAtIndex(self, new_data, index):
-        if index > self.Size():
-            print("index out of range")
-            return
         new_node = Node(new_data)
         last = self.head
         beforelast = last
         count = 0
+        if index > self.Size():
+            print("index out of range")
+            return
+        if index == 0:
+            new_node.next = last
+            self.head = new_node
+            return
+        
         while count != index:
             beforelast = last
             last = last.next
@@ -90,5 +95,8 @@ llist.insertAtBeginning(20)
 llist.insertAtBeginning(30)
 llist.insertAtBeginning(40)
 llist.insertAtBeginning(50)
-
+llist.insertAtEnd(60)
+llist.insertAtEnd(31)
+llist.insertAtIndex(15,0)
+llist.insertAtIndex(98,-1)
 llist.display()
