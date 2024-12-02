@@ -77,8 +77,26 @@ class LinkedList:
                 last = last.next
             prev.next = None
 
-    def deleteByValue(self):
-        pass
+    def deleteByValue(self,value):
+        if self.head == None:
+            print("empty")
+
+        elif self.head.data == value:
+            self.head = self.head.next
+
+        else:
+            last = self.head
+            prev = last
+            while last is not None:
+                if last.data == value:
+                    prev.next = last.next
+                    return
+                prev = last 
+                last = last.next 
+              
+            print("value is not in the list")
+                    
+
 
     def deleteAtIndex(self):
         pass
@@ -111,7 +129,7 @@ llist.insertAtBeginning(20)
 llist.insertAtBeginning(30)
 llist.insertAtBeginning(40)
 llist.insertAtBeginning(50)
-llist.deleteFromEnd()
+llist.deleteByValue(50)
 
 
 
