@@ -34,7 +34,6 @@ class LinkedList:
             size += 1
         return size
         
-
     def insertAtIndex(self, new_data, index):
         new_node = Node(new_data)
         last = self.head
@@ -58,7 +57,11 @@ class LinkedList:
 
 
     def deleteFromBeginning(self):
-        pass
+        if self.head is None:
+            print("list is already empty")
+        else:
+            self.head = self.head.next
+
 
     def deleteFromEnd(self):
         pass
@@ -73,11 +76,13 @@ class LinkedList:
         pass
 
     def display(self):
+        if self.head == None:
+            print("list is empty")
+            return
         last = self.head
-        while last.next is not None:
+        while last is not None:
             print(last.data, end= " ")
             last = last.next
-        print(last.data)
         
 
     def search(self):
@@ -90,13 +95,15 @@ class LinkedList:
 
 llist = LinkedList()
 
-llist.insertAtBeginning(10)
-llist.insertAtBeginning(20)
-llist.insertAtBeginning(30)
-llist.insertAtBeginning(40)
-llist.insertAtBeginning(50)
-llist.insertAtEnd(60)
-llist.insertAtEnd(31)
-llist.insertAtIndex(15,0)
-llist.insertAtIndex(98,-1)
+# llist.insertAtBeginning(10)
+# llist.insertAtBeginning(20)
+# llist.insertAtBeginning(30)
+# llist.insertAtBeginning(40)
+# llist.insertAtBeginning(50)
+# llist.insertAtEnd(60)
+# llist.insertAtEnd(31)
+# llist.insertAtIndex(15,0)
+llist.deleteFromBeginning()
+llist.deleteFromBeginning()
+
 llist.display()
