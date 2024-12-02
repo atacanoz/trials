@@ -27,7 +27,9 @@ class LinkedList:
         last.next = new_node
 
     def Size(self):
-        size = 0    
+        if self.head is None:
+            return 0
+        size = 0
         last = self.head
         while last.next is not None:
             last = last.next
@@ -55,13 +57,11 @@ class LinkedList:
         new_node.next = last
         beforelast.next = new_node            
 
-
     def deleteFromBeginning(self):
         if self.head is None:
             print("list is already empty")
         else:
             self.head = self.head.next
-
 
     def deleteFromEnd(self):
         if self.head is None:
@@ -96,11 +96,24 @@ class LinkedList:
               
             print("value is not in the list")
                     
-
-
-    def deleteAtIndex(self):
-        pass
-
+    def deleteAtIndex(self,index):
+        if self.head is None:
+            print("empty")
+        elif self.Size() < index:
+            print(f"index out of range size: {self.Size()}")
+        elif index == 0:
+            self.head = self.head.next
+        else:
+            last = self.head
+            prev = last
+            count = 0
+            while count != index:
+                prev = last
+                last = last.next
+                count += 1
+            prev.next=last.next
+            last = None
+        
     def traverse(self):
         pass
 
@@ -129,7 +142,7 @@ llist.insertAtBeginning(20)
 llist.insertAtBeginning(30)
 llist.insertAtBeginning(40)
 llist.insertAtBeginning(50)
-llist.deleteByValue(50)
+llist.deleteAtIndex(0)
 
 
 
