@@ -9,3 +9,5 @@ class BinaryTree:
         self.root = None        
 
 print("change")
+
+print("hlaaoladodklpaküaoğkfa")
