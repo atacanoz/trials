@@ -68,7 +68,12 @@ class LinkedList:
         pass
 
     def display(self):
-        pass
+        last = self.head
+        while last.next is not None:
+            print(last.data, end= " ")
+            last = last.next
+        print(last.data)
+        
 
     def search(self):
         pass
