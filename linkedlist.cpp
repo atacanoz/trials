@@ -11,9 +11,6 @@ public:
         this->data = data;
         this->next = nullptr;
     }
-
-
-
 };
 
 class LinkedList{
@@ -164,16 +161,5 @@ int main(){
 
     LinkedList list;
     
-    
-    
-    list.display();
-    list.reverse();
-
-
-
-
-    list.display();
-
-
     return 0;
 }
