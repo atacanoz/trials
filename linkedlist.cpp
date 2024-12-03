@@ -138,6 +138,24 @@ public:
         return false;
     }
 
+    void reverse(){
+        if(this->head == nullptr){
+            cout << "list is empty" << endl;
+            return;
+        }
+        Node* temp = this -> head;
+        Node* aftr = temp->next;
+        Node* prev = nullptr;
+        while(temp->next != nullptr){
+            temp->next = prev;
+            prev = temp;
+            temp = aftr;
+            aftr = aftr->next;
+        }
+        temp -> next = prev;
+        this->head = temp;
+    }
+
 };
 
 
@@ -145,12 +163,11 @@ public:
 int main(){
 
     LinkedList list;
-    list.insertAtEnd(50);
-    list.insertAtEnd(40);
-    list.insertAtEnd(30);
-    list.insertAtEnd(20);
-    list.insertAtEnd(10);
+    
+    
+    
     list.display();
+    list.reverse();
 
 
 
