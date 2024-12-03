@@ -12,6 +12,8 @@ public:
         this->next = nullptr;
     }
 
+
+
 };
 
 class LinkedList{
@@ -24,8 +26,21 @@ public:
 
     void insertAtBegin(int new_data){
         Node* new_node = new Node(new_data);
-        new_node->next = head;
+        new_node->next = this->head;
         this->head = new_node;
+    }
+
+    void insertAtEnd(int new_data){
+        if(this->head == nullptr){
+            this->insertAtBegin(new_data);
+            return;
+        }
+        Node* new_node = new Node(new_data);
+        Node* temp = this->head;
+        while(temp->next != nullptr){
+            temp = temp->next;
+        }
+        temp->next = new_node;
     }
 
     void display(){
@@ -35,8 +50,13 @@ public:
             temp = temp->next;
         }
         cout << "nullptr" << endl;
-        delete temp;
     }
+
+
+
+
+
+
 
 };
 
@@ -45,11 +65,17 @@ public:
 int main(){
 
     LinkedList list;
-    list.insertAtBegin(10);
-    list.insertAtBegin(20);
-    list.insertAtBegin(30);
-    list.insertAtBegin(40);
-    list.insertAtBegin(50);
+   
+    list.insertAtEnd(30);
+    list.insertAtEnd(20);
+    list.insertAtEnd(10);
+    list.insertAtEnd(00);
+    list.insertAtEnd(90);
+    list.insertAtBegin(31);
+    list.insertAtBegin(31);
+
+
+
     list.display();
 
 
