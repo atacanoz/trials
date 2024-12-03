@@ -43,6 +43,24 @@ public:
         temp->next = new_node;
     }
 
+    void insertAtIndex(int new_data, int index){
+        if(index == 0){
+            this->insertAtBegin(new_data);
+            return;
+        }
+        if(index > this->size() || 0 > index){
+            cout << "index out of range" << endl;
+            return;
+        }
+        Node* temp = this->head;
+        for(int i=0; i<index-1; i++){
+            temp = temp->next;
+        }
+        Node* new_node = new Node(new_data);
+        new_node->next = temp->next;
+        temp->next = new_node;
+    }
+
     int size(){
         int count = 0;
         Node* temp = this->head;
@@ -75,12 +93,11 @@ public:
 int main(){
 
     LinkedList list;
-   
-    list.insertAtEnd(30);
-    list.insertAtEnd(20);
-    list.insertAtEnd(10);
-    list.insertAtEnd(00);
-    list.insertAtEnd(90);
+    list.insertAtEnd(50);
+    
+    
+    list.display();
+    list.insertAtIndex(31,0);
     list.display();
 
 
