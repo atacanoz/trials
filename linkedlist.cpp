@@ -80,6 +80,53 @@ public:
         cout << "nullptr" << endl;
     }
 
+    void deleteFromBegin(){
+        if(this->head == nullptr){
+            cout << "list is already empty" << endl;
+            return;
+        }
+        this->head = this->head->next;
+    }
+    
+    void deleteFromEnd(){
+        if(this->head == nullptr){
+            cout << "list is already empty"<< endl;
+            return;
+        }
+
+        if(this->head->next == nullptr){
+            this->head = nullptr;
+            return;
+        }
+
+        Node* temp = this->head;
+        while(temp->next->next != nullptr){
+            temp = temp -> next;
+        }
+        temp -> next = nullptr;
+    }
+
+    void deleteAtIndex(int index){
+        if(this->head == nullptr){
+            cout << "already empty" << endl;
+            return;
+        }
+        if(this->size()<=index || index<0){
+            cout << "index out of range" << endl;
+            return;
+        }
+
+        if(index == 0){
+            this->deleteFromBegin();
+            return;
+        }
+        Node* temp = this->head;
+        for(int i = 0; i<index-1; i++){
+            temp = temp -> next;
+        }
+        temp->next = temp->next->next;
+    }
+
 
 
 
@@ -94,10 +141,15 @@ int main(){
 
     LinkedList list;
     list.insertAtEnd(50);
-    
-    
+    list.insertAtEnd(40);
+    list.insertAtEnd(30);
+    list.insertAtEnd(20);
+    list.insertAtEnd(10);
     list.display();
-    list.insertAtIndex(31,0);
+
+
+
+
     list.display();
 
 
