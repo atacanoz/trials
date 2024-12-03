@@ -43,6 +43,16 @@ public:
         temp->next = new_node;
     }
 
+    int size(){
+        int count = 0;
+        Node* temp = this->head;
+        while(temp != nullptr){
+            count ++;
+            temp = temp->next;
+        }
+        return count;
+    }
+
     void display(){
         Node* temp = this->head;
         while (temp != nullptr){
@@ -71,11 +81,6 @@ int main(){
     list.insertAtEnd(10);
     list.insertAtEnd(00);
     list.insertAtEnd(90);
-    list.insertAtBegin(31);
-    list.insertAtBegin(31);
-
-
-
     list.display();
 
 
