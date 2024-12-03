@@ -127,11 +127,26 @@ public:
         temp->next = temp->next->next;
     }
 
+    void search(int wanted_data){
+        if(this->head == nullptr){
+            cout << "list is empty no data" << endl;
+            return; 
+        }
+        Node* temp = this->head;
+        int index = 0;
+        while(temp != nullptr && temp->data != wanted_data){
+            temp = temp->next;
+            index++;
+        }
 
+        if(temp == nullptr){
+            cout << "value is not in the list" << endl;
+            return;
+        }
 
+        cout << "value found at index: " << index << endl;
 
-
-
+    }
 
 };
 
